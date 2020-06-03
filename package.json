@@ -1,12 +1,12 @@
 {
   "name": "vue-intersect-test-package",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "scripts": {
     "build": "rollup -c rollup.config.js"
   },
-  "main": "dist/intersect-plugin.umd.js",
-  "module": "dist/intersect-plugin.esm.js",
-  "unpkg": "dist/intersect-plugin.js",
+  "main": "dist/vue-element-spy-plugin.umd.js",
+  "module": "dist/vue-element-spy-plugin.esm.js",
+  "unpkg": "dist/vue-element-spy-plugin.js",
   "devDependencies": {
     "@rollup/plugin-buble": "^0.21.3",
     "@rollup/plugin-commonjs": "^11.1.0",
