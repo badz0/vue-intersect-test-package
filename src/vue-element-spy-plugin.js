@@ -23,7 +23,7 @@ const vueElementSpy = {
     }
 
     const topObserver = new IntersectionObserver(([entry]) => {
-      let activeNew = entry.boundingClientRect.top <= config.offset*-1;
+      let activeNew = entry.boundingClientRect.top <= config.offset;
       if (!config.greedy) activeNew = activeNew && entry.boundingClientRect.top*-1 < el.offsetHeight;
 
       if (target.active === activeNew) return;
@@ -45,7 +45,7 @@ const vueElementSpy = {
 
     if (!config.greedy) {
       const bottomObserver = new IntersectionObserver(([entry]) => {
-        if (entry.boundingClientRect.top > config.offset*-1) return;
+        if (entry.boundingClientRect.top > config.offset) return;
 
         const activeNew = entry.intersectionRatio > 0;
         if (target.active === activeNew) return;

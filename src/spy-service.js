@@ -52,9 +52,9 @@ class SpyService {
         value.forEach(item => {
           const domRect = item.el.getBoundingClientRect();
 
-          let active = domRect.top <= item.config.offset*-1;
+          let active = domRect.top <= item.config.offset;
           if (!item.config.greedy) {
-            active = active && (domRect.top + item.config.offset) * -1 < domRect.height;
+            active = active && item.config.offset - domRect.top < domRect.height;
           }
 
           if (active === item.active) return;
@@ -73,9 +73,9 @@ class SpyService {
     context.forEach(item => {
       const domRect = item.el.getBoundingClientRect();
 
-      let active = domRect.top <= item.config.offset*-1;
+      let active = domRect.top <= item.config.offset;
       if (!item.config.greedy) {
-        active = active && (domRect.top + item.config.offset) * -1 < domRect.height;
+        active = active && item.config.offset - domRect.top < domRect.height;
       }
 
       if (active) {
